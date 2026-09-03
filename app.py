@@ -1,7 +1,6 @@
 import streamlit as st
 from groq import Groq
 st.set_page_config(page_title="MindMate", page_icon="🧠")
-
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
 st.title("🧠 MindMate - AI Psychology Assistant")
@@ -19,7 +18,7 @@ if st.button("Analyze"):
           1. Psychology Analysis (possible bias)
           2. Better Thinking (CBT based reframe)
           3. Better English Version of their thought keep it simple and supportive."""
-          response = client.chat.completion.creat(
+          response = client.chat.completions.create(
               model="11ama3-8b-8192",
               Message=[{"role": "user", "content": prompt}]
           ) 
