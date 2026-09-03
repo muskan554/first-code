@@ -4,7 +4,7 @@ st.set_page_config(page_title="MindMate", page_icon="🧠")
 
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
-st.title(🧠 MindMate - AI Psychology Assistant")
+st.title("🧠 MindMate - AI Psychology Assistant")
 st.write("Your thought ko better thinking me badlo")
 
 user_thought = st.text_area("Apna thought / problem yaha likho (English me):", 
@@ -24,6 +24,6 @@ if st.button("Analyze"):
               Message=[{"role": "user", "content": prompt}]
           ) 
           st.write(response.choice[0].message.content) 
-        else:
-             st.warning("Pehle kuch likho!")
-        st.sidebar.write("Made for GitHub Portfolio") 
+    else:
+        st.warning("Pehle kuch likho!")
+        st.sidebar.write("Made for GitHub Portfolio")
